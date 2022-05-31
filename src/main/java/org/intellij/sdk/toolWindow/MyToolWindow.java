@@ -2,7 +2,9 @@
 
 package org.intellij.sdk.toolWindow;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
@@ -13,17 +15,19 @@ public class MyToolWindow {
     private JPanel myToolWindowContent;
 
 
-    public MyToolWindow(ToolWindow toolWindow) {
+    public MyToolWindow(ToolWindow toolWindow, @NotNull Project project) {
         hideToolWindowButton.addActionListener(e -> toolWindow.hide(null));
-        click.addActionListener(e -> init());
+        click.addActionListener(e -> init(project));
+
 //        this.init();
     }
 
-    public void init() {
+    public void init(@NotNull Project project) {
         if (new SampleDialogWrapper().showAndGet()) {
             System.out.println("确定");
+
         } else {
-            System.out.println("取消");
+            MyNotifier.notifyError(project, "错误信息");
         }
 
     }

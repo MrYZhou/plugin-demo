@@ -36,6 +36,10 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="工具箱" secondary="true" icon="AllIcons.General.Modified" anchor="right"
                     factoryClass="org.intellij.sdk.toolWindow.MyToolWindowFactory"/>
+        <notificationGroup id="Custom Notification Group"
+                           displayType="BALLOON"
+        />
     </extensions>
+
 
 </idea-plugin>
