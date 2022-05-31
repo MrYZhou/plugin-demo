@@ -2,7 +2,10 @@
 
 package org.intellij.sdk.toolWindow;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,9 +26,12 @@ public class MyToolWindow {
     }
 
     public void init(@NotNull Project project) {
-        if (new SampleDialogWrapper().showAndGet()) {
+        if (new SampleDialogWrapper("文件选择器").showAndGet()) {
             System.out.println("确定");
-
+//            文件选择
+            FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(true, false, false, false, false, false);
+            VirtualFile[] virtualFiles = FileChooser.chooseFiles(fileChooserDescriptor, project, null);
+            System.out.println(virtualFiles);
         } else {
             MyNotifier.notifyError(project, "错误信息");
         }
