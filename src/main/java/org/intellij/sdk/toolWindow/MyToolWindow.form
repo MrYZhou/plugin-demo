@@ -24,11 +24,14 @@
           <text value="Hide"/>
         </properties>
       </component>
-      <hspacer id="8bf9c">
+      <component id="a0e7a" class="javax.swing.JButton" binding="textBtn">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
+        <properties>
+          <text value="文本框"/>
+        </properties>
+      </component>
       <hspacer id="26841">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
