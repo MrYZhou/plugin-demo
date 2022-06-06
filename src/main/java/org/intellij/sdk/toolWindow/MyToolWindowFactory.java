@@ -28,4 +28,5 @@ public class MyToolWindowFactory implements ToolWindowFactory {
         toolWindow.getContentManager().addContent(content2);
     }
 
+
 }
